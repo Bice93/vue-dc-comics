@@ -28,6 +28,12 @@ export default {};
 @import "../styles/variables.scss";
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+
   .container {
     width: 1000px;
     margin: 0 auto;

@@ -12,10 +12,11 @@ export default {};
 
 <style scoped lang="scss">
 main {
+    margin-top: 95px;
   background-image: url('../assets/images/jumbotron.jpg');
   background-size: cover;
   color:white;
-  height: 200px;
+    height:300px;
 
   .container {
     width: 1000px;
