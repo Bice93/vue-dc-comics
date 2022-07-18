@@ -24,6 +24,7 @@ export default {
       width: calc(100% / 6 - 20px);
       margin: 20px 10px;
       text-transform: uppercase;
+      text-align: left;
 
       .box_image{
         width: 100%;
@@ -36,6 +37,10 @@ export default {
         object-fit: cover;
         object-position:top;
       }
+      }
+
+      h6{
+        font-weight: 400;
       }
 }
 </style>

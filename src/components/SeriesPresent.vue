@@ -1,13 +1,10 @@
 <template>
   <SeriesPresent>
-    <!-- <div class="jumbotron">
-      <div class="container">
-        <h2>Content goes here</h2>
-      </div>
-    </div> -->
+    <div class="jumbotron"></div>
 
     <div class="rowSeries">
       <div class="container">
+        <h2>Current Series</h2>
         <div class="container_products">
           <Product v-for="(product, index) in series" 
           :key="index"
@@ -17,6 +14,7 @@
           :TypeProduct="product.type"
           />
         </div>
+        <button>Load More</button>
         <!-- <div class="container_products">
           <div class="product" v-for="(product, index) in series" :key="index">
             <div class="box_image">
@@ -167,12 +165,42 @@ export default {
 <style scoped lang="scss">
 @import "../styles/variables.scss";
 
+.jumbotron{
+  height: 300px;
+  background-image: url("../assets/images/jumbotron.jpg");
+  background-size: cover;
+}
+
 .rowSeries {
   background-color: black;
-  // background-image: url("../assets/images/jumbotron.jpg");
-  // background-size: cover;
   color: white;
   padding: 30px 0;
+}
+
+.container{
+  position: relative;
+  text-align: center;
+
+    h2{
+      width: 20%;
+      background-color: $colorActive;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      padding: 5px;
+      position: absolute;
+      top: -50px;
+    }
+
+    button{
+      background-color: $colorActive;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: .6rem;
+      font-weight: bold;
+      padding: 5px 25px;
+    }
 }
 
 .container_products {
