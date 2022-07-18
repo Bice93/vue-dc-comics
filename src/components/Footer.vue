@@ -53,7 +53,7 @@
           </nav>
         </div>
         <div class="footerLogo">
-          <img src="../assets/images/dc-logo-bg.png" alt="" />
+          <!-- <img src="../assets/images/dc-logo-bg.png" alt="" /> -->
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
             </div>
             
             <div class="iconFollow">
-                <h5>Follow Us</h5>
+                <h3>Follow Us</h3>
                 <img src="../assets/images/footer-facebook.png" alt="">
                 <img src="../assets/images/footer-twitter.png" alt="">
                 <img src="../assets/images/footer-youtube.png" alt="">
@@ -87,14 +87,11 @@ footer {
   background-image: url("../assets/images/footer-bg.jpg");
 }
 
-.container {
-  width: 1000px;
-  margin: 0 auto;
-}
-
+// link di navigazione del footer
 .footerLink {
   display: flex;
-  height: 300px;
+  height: 350px;
+  //height: calc(100vh - 400px - 80px);
 }
 
 .footerNav {
@@ -128,21 +125,17 @@ footer {
 
 .footerLogo {
   width: 70%;
-  text-align: center;
-
-  img {
-    height: 100%;
-  }
+  background-image: url('../assets/images/dc-logo-bg.png');
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
+//Follow del footer
 .footerFollow {
   width: 100%;
   background-color: $bgFooterLight;
   color: white;
   text-transform: uppercase;
-//   position: fixed;
-//   bottom: 0;
-//   right: 0;
 
   .container{
         height: 80px;
@@ -162,7 +155,7 @@ footer {
     display: flex;
     align-items: center;
 
-    h5{
+    h3{
         color: $colorActive;
     }
 

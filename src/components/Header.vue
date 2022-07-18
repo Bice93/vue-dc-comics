@@ -28,15 +28,14 @@ export default {};
 @import "../styles/variables.scss";
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
     width: 100%;
     background-color: white;
+    color: $colorNav;
 
   .container {
-    width: 1000px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,16 +43,16 @@ header {
 }
 
 img {
-  height: 60px;
+  height: 80px;
 }
 
 ul {
   list-style: none;
   li {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     display: inline-block;
-    padding: 40px 10px;
+    padding: 45px 10px;
     text-transform: uppercase;
 
     &.activeElement{

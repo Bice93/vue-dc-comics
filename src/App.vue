@@ -2,7 +2,7 @@
   <div id="app">
 
     <MainHeader />
-    <MainMain />
+    <SeriesPresent />
     <MainFooter />
 
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import MainHeader from './components/Header.vue';
-import MainMain from './components/Main.vue';
+import SeriesPresent from './components/SeriesPresent.vue';
 import MainFooter from './components/Footer.vue';
 
 export default {
@@ -18,7 +18,7 @@ export default {
   components: {
 
     MainHeader,
-    MainMain,
+    SeriesPresent,
     MainFooter,
 
   }
@@ -28,7 +28,12 @@ export default {
 <style lang="scss">
 @import "./styles/general.scss";
 
-#app{
-  height: 100vh;
+// #app{
+//   height: 100vh;
+// }
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
 }
 </style>
