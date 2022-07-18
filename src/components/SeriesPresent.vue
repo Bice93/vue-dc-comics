@@ -8,15 +8,23 @@
 
     <div class="rowSeries">
       <div class="container">
-        <!-- <h2>Content goes here</h2> -->
         <div class="container_products">
+          <Product v-for="(product, index) in series" 
+          :key="index"
+          :UrlImage="product.thumb"
+          :PriceProduct="product.price"
+          :TitleProduct="product.series"
+          :TypeProduct="product.type"
+          />
+        </div>
+        <!-- <div class="container_products">
           <div class="product" v-for="(product, index) in series" :key="index">
             <div class="box_image">
               <img :src="product.thumb" :alt="product.series">
             </div>
             <h6> {{ product.series }} </h6>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -54,7 +62,15 @@
 </template>
 
 <script>
+import Product from './Product.vue';
+
+
 export default {
+  name: 'Products',
+  components: {
+    Product,
+  },
+
   data: function () {
     return {
       series: [
@@ -163,26 +179,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-
-.product{
-      width: calc(100% / 6 - 20px);
-      margin: 20px 10px;
-      text-transform: uppercase;
-
-      .box_image{
-        width: 100%;
-        height: 10rem;
-        margin-bottom: 10px;
-
-        img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position:top;
-      }
-      }
-}
-
 
 .content_menu {
   background-color: $colorActive;
