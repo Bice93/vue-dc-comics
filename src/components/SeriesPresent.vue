@@ -29,29 +29,9 @@
     <div class="content_menu">
       <div class="container">
         <ul class="menu">
-          <li>
-            <img src="../assets/images/buy-comics-digital-comics.png" alt="" />
-            Digital Comics
-          </li>
-
-          <li>
-            <img src="../assets/images/buy-comics-merchandise.png" alt="" />
-            Dc Merchandise
-          </li>
-
-          <li>
-            <img src="../assets/images/buy-comics-subscriptions.png" alt="" />
-            Subscription
-          </li>
-
-          <li>
-            <img src="../assets/images/buy-comics-shop-locator.png" alt="" />
-            Comic Shop Locator
-          </li>
-
-          <li>
-            <img src="../assets/images/buy-dc-power-visa.svg" alt="" />
-            Dc Power Visa
+          <li v-for="(product, index) in ProductsList" :key="index">
+            <img :src="require(`../assets/images/${product.urlImage}`)" alt="" />
+            <h5> {{ product.text }} </h5>
           </li>
         </ul>
       </div>
@@ -157,6 +137,30 @@ export default {
           type: "graphic novel",
         },
       ],
+
+      ProductsList:[
+        {
+          text:'Digital Comics',
+          urlImage:'buy-comics-digital-comics.png',
+        },
+         {
+          text:'Dc Merchandise',
+          urlImage:'buy-comics-merchandise.png',
+        },
+        {
+          text:'Subscription',
+          urlImage:'buy-comics-subscriptions.png',
+        },
+        {
+          text:'Comic Shop Locator',
+          urlImage:'buy-comics-shop-locator.png',
+        },
+        {
+          text:'Dc Power Visa',
+          urlImage:'buy-dc-power-visa.svg',
+        },
+
+      ],
     };
   },
 };
@@ -210,7 +214,7 @@ export default {
 
 .content_menu {
   background-color: $colorActive;
-  padding: 30px 0;
+  padding: 50px 0;
 }
 
 .menu {
@@ -224,10 +228,13 @@ export default {
   li {
     display: flex;
     align-items: center;
-    font-size: 11px;
+    font-size: 15px;
+      h5{
+        font-weight: 400;
+      }
   }
   img {
-    width: 35px;
+    height: 2.5rem;
     margin-right: 10px;
   }
 }
