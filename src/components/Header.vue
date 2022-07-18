@@ -4,16 +4,9 @@
       <img src="../assets/images/dc-logo.png" alt="" />
       <nav>
         <ul>
-          <li>Characters</li>
-          <li class="activeElement">Comics</li>
-          <li>Movies</li>
-          <li>Tv</li>
-          <li>Games</li>
-          <li>Collectibles</li>
-          <li>Videos</li>
-          <li>Fans</li>
-          <li>News</li>
-          <li>Shop</li>
+          <li :class="{activeElement : index === activeIndex}" v-for="(link, index) in HeaderLinks" :key="index" >
+            <a :href="link.url"> {{ link.text }} </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -21,25 +14,72 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {
+      activeIndex: 3,
+      HeaderLinks: [
+        {
+          text: "Characters",
+          url: "#",
+        },
+        {
+          text: "Comics",
+          url: "#",
+        },
+        {
+          text: "Movies",
+          url: "#",
+        },
+        {
+          text: "Tv",
+          url: "#",
+        },
+        {
+          text: "Games",
+          url: "#",
+        },
+        {
+          text: "Collectibles",
+          url: "#",
+        },
+        {
+          text: "Videos",
+          url: "#",
+        },
+        {
+          text: "Fans",
+          url: "#",
+        },
+        {
+          text: "News",
+          url: "#",
+        },
+        {
+          text: "Shop",
+          url: "#",
+        },
+      ],
+    };
+  },
+
+
+};
 </script>
 
 <style scoped lang="scss">
 @import "../styles/variables.scss";
 
 header {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    width: 100%;
-    background-color: white;
-    color: $colorNav;
+  width: 100%;
+  background-color: white;
+  color: $colorNav;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 }
 
 img {
@@ -48,17 +88,21 @@ img {
 
 ul {
   list-style: none;
-  li {
-    font-size: 14px;
-    font-weight: bold;
-    display: inline-block;
-    padding: 45px 10px;
-    text-transform: uppercase;
+    li {
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      padding: 45px 10px;
+      text-transform: uppercase;
+        a{
+          text-decoration: none;
+          color: $colorNav;
+        }
 
-    &.activeElement{
-        color: $colorActive;
-        border-bottom: 4px solid $colorActive;
+        &.activeElement {
+          color: $colorActive;
+          border-bottom: 4px solid $colorActive;
+        }
     }
-  }
 }
 </style>
